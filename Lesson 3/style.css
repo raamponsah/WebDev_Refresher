@@ -1,0 +1,78 @@
+:root {
+    --fs: 1.2em;
+}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: var(--fs);
+    font-family: "Roboto Mono", monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+div#calculator {
+    display: grid;
+}
+
+.row:nth-child(2) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.row:last-child {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+button {
+    padding: 1em;
+    border-radius: 0;
+    border: 0;
+}
+
+input[type="number"] {
+    border: 0;
+    padding: 1em;
+    background: black;
+    color: white;
+    text-align: right;
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+
+.equals, .op{
+    background: orange;
+}
+
+.equals:hover, .op:hover{
+    background: rgb(251, 185, 104);
+}
+
+.number:hover{
+    background: rgb(195, 195, 195);
+
+}
